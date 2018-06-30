@@ -11,7 +11,7 @@ class TokenController {
         const apiToken = auth.getAuthHeader()
 
         await auth
-            .authenticator('api')
+            .authenticator('jwt')
             .revokeTokens([apiToken])
     }
 }
