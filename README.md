@@ -1,31 +1,11 @@
-# Adonis fullstack application
+# todorest-api
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
+[![Run Todos collection in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/506e57349e7732154417)
+[![Run Token collection in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/95d3553a88f9df186547)
+[![Run User collection Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/cbc951a367985a682204)
 
-1. Bodyparser
-2. Session
-3. Authentication
-4. Web security middleware
-5. CORS
-6. Edge template engine
-7. Lucid ORM
-8. Migrations and seeds
+**API Docs
+[![Todo](Todo docs)](Todo docs)
+[![User](Todo docs)](User docs)
+[![Token](https://run.pstmn.io/button.svg)](Token docs)
 
-## Setup
-
-Use the adonis command to install the blueprint
-
-```bash
-adonis new yardstick
-```
-
-or manually clone the repo and then run `npm install`.
-
-
-### Migrations
-
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
-```

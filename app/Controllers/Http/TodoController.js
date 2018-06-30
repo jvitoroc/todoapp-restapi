@@ -28,7 +28,7 @@ class TodoController {
         };
     }
 
-    async index({request, response, auth}){
+    async index({auth}){
         const user = await auth.getUser()
         let todos = await user
             .todos()
@@ -48,7 +48,7 @@ class TodoController {
         return {data: serializedTodos};
     }
 
-    async show({request, response, auth}){
+    async show({request}){
         let todo = await Todo
             .find(request.params.id);
         
@@ -64,7 +64,7 @@ class TodoController {
         };
     }
     
-    async update({request, response}){
+    async update({request}){
         let todo = await Todo
             .findOrFail(request.params.id);
         
