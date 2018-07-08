@@ -2,8 +2,6 @@
 
 const Todo = use('App/Models/Todo');
 
-const { sanitize } = use('Validator')
-
 class TodoController {
     
     async store({request, response, auth}){
@@ -101,9 +99,8 @@ class TodoController {
             .where({user_id: (await auth.getUser()).id, id: request.params.id})
             .delete();
 
-        response.status(res === 0 ? 404:204);
-
-        response.send();
+        response.status(res === 0 ? 404:200);
+        response.send({deleted: res !== 0});
     }
 }
 

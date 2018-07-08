@@ -10,11 +10,6 @@ class StoreUser {
       password: 'required|max:20|min:8'
     }
   }
-
-  async fails (errorMessages) {
-    console.log(errorMessages);
-    return this.ctx.response.send(errorMessages)
-  }
   
   get formatter(){
     return formatters.JsonApi

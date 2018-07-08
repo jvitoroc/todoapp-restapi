@@ -23,6 +23,7 @@ class ExceptionHandler extends BaseExceptionHandler {
     async handle(error, { request, response }) {
         response.status(error.status);
         let responseValue;
+        let message;
         switch (error.code || error.name) {
             
             case 'E_MISSING_DATABASE_ROW':
@@ -37,6 +38,8 @@ class ExceptionHandler extends BaseExceptionHandler {
             
             case 'HttpException':
                 response.status(404)
+                break;
+            
 			default:
 			case 'E_JWT_TOKEN_EXPIRED':
 			case "E_INVALID_JWT_TOKEN":
@@ -50,6 +53,9 @@ class ExceptionHandler extends BaseExceptionHandler {
                     ]
 				};
         }
+        responseValue.errorCode = error.code;
+        responseValue.errorName = error.name;
+        responseValue.status = error.status;
 		if(error.code !== undefined || error.name !== undefined)
 			response.send(responseValue);
 		else
